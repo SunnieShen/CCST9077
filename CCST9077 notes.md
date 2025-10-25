@@ -29,8 +29,6 @@ preview video
 	- information consistently being created
 	- symphasis, explain using a set of only a few rules
 	- hope
-
-
 ### L2
 **MOORE’S LAW:** #transistors doubles/ 2 year
 - summarize, observation

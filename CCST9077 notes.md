@@ -138,3 +138,16 @@ Notes:
 		- steps: preparation(A) &rArr; measurement(B) &rArr; shifting(public discussion) &rArr; detection
 		- shifting: AB with different measurement &rArr; collapse at B &rarr; dismiss this bit
 		- detection: AB same measurement, 50% Eve chooses the wrong measurement &rArr; qubit collapses to the other state &rArr; change the B's observation result &rarr; select random sample bits to test correctness
+# L6_Quantum_computer
+
+
+# Midterm writeup
+- why EPR pairs is alternative model for cyptography
+	- Einstine &rArr; Bell
+	- defining reality
+- why quantum alo is not a growing branch of quantum information today
+	- completely different class of algorithms, only for quantum not classic ones e.g. are 2 quantum entangled
+	- quantum simulation e.g. biology
+	- presentation of these questions might be only able under quantum structure
+	  e.g.
+- predictions for the next five years

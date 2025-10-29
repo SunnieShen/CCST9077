@@ -141,13 +141,43 @@ Notes:
 # L6_Quantum_computer
 
 
-# Midterm writeup
-- why EPR pairs is alternative model for cyptography
+# Midterm write-up
+### logistics
+comments, organize them, combine ideas in video and lectures
+format: follow up interview/ another scientist who counter some ideas/ time traveller
+remark:
+- creativity and originallity
+- quantum concepts (superposition, entanglement, etc) are concerned, **you are required to describe and explain them using the "magic box" language** (cf. Lectures 1-4) of this course. Please also add references to the origin (e.g., Lecture 3, p 4-5).
+-  **a brief statement on the usage of AI** (e.g., "AI has been used to polish the write-up and correct grammar mistakes.").
+- plagarism
+### video
+- why EPR pairs is alternative model for cryptography
 	- Einstine &rArr; Bell
-	- defining reality
-- why quantum alo is not a growing branch of quantum information today
-	- completely different class of algorithms, only for quantum not classic ones e.g. are 2 quantum entangled
-	- quantum simulation e.g. biology
-	- presentation of these questions might be only able under quantum structure
+	- defining locality, reality
+- ==why quantum algorithm is not a growing branch of quantum information today==
+	- =="it might be wrong to expect quantum computers to better than classical computer in solving classical and well-defined questions "==
+	- entirely new class of algorithms, only for quantum not classic ones 
+	  e.g. are 2 quantum entangled
+	  &rArr; data structure is define under quantum structure
+	- ==quantum simulation== 
+	  e.g. biology, photosynthesis, non-trivil, why energy transfer is sufficient? what is the mechanism &rArr; quantum simulation, what is the important factor &rArr; crucial for solar cell technology
+	  &rArr; presentation of such question is under quantum structure
 	  e.g.
+	- ==computation becomes exponentially difficult when particles increases==
 - predictions for the next five years
+	- development of tools and techniques &rArr; control nature
+		- better ==quantum communication==, 
+		- quantum cryptography, ==device independent cryptography==
+		- ==quantum computing/ others== (apart from quantum simulation)
+		  e.g. more accurate clock
+	- really explore quantum technology: see the potential
+		- ==harness entanglement, superposition==
+	- imagine going to the past and interviewing a computer scientist like Charles Babbage
+		- speculate the usage and impact of this machine: he will not imagine
+	&rArr; ==probably much more ten years later==
+
+### write-up
+setup: I'm a time traveller from 2025 to 2015, who is studying basic quantum computing knowledge. I would like to follow up some question that explains quantum application mentioned in the interview, and share the exciting development in quantum technology in the "following 10 years".
+
+format: **story(some narration)** / third party narration/ first angle? (time traveller, scientist)
+

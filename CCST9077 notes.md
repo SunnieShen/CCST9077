@@ -110,7 +110,7 @@ L3
 > no faster than light communication
 > B don't know A's choice of steering or not? -- e.g. H from +45/-45/H
 
-L4
+# L4
 - EPR paper
 	- property(independent of measurement) 
 	- reality(local, cannot be affected by another system?)
@@ -181,3 +181,17 @@ setup: I'm a time traveller from 2025 to 2015, who is studying basic quantum com
 
 format: **story(some narration)** / third party narration/ first angle? (time traveller, scientist)
 
+- mechanism of cryptography model using EPR pairs: **E91 protocol**
+	- quantum entanglement
+	- Bell state
+	- perform same measurement
+- some deficiency of E91 protocol?
+- "it might be wrong to expect quantum computers to better than classical computer in solving classical and well-defined questions "
+	- correct: quantum simulation, new types of computing algorithm
+	- more exciting: classic questions that classical computers might not solve due to exponentially growing complexity (exponentially speed up) &rArr; improve efficiency (exponentially faster)
+	  ![[Pasted image 20251030075553.png]]
+- future prospect: 
+	- better quantum communication
+	- device independent cryptography
+	- quantum computing technology into daily life
+- summarize/ ending: lay the foundation, 上价值

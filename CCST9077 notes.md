@@ -1,4 +1,4 @@
-**T1**
+# **T1**
 preview video
 - types of information
 	- difference: disorder (thermodynamics)VS order(biology, gene)
@@ -53,9 +53,7 @@ preview video
 - no cloning: cannot copy the state of qubits
 - cannot be stored in bits
 
-
-### Midterm concepts review
-L1
+# L1
 - What made information technology possible 2+2
 - What is information
 	- everyday
@@ -80,7 +78,7 @@ L1
 - information revolution
 - it from bit(everything in the universe is made of information)
 - Can everything be reduced to information
-L2
+# L2
 - Moore's law(what? significance? not law of nature; quantify)
 > scientific method (hypotheses+experiment)
 - ball in box
@@ -96,7 +94,7 @@ L2
 - quantum information processing
 	- magic shake, open
 - it from qubits (everything in the universe made of qubits)
-L3
+# L3
 > linearly polarised photon as qubits
 - entanglement
 	- bell state (know relation, don't know exact which &lArr; dependence) (new state; not either both L or both R)
@@ -124,7 +122,7 @@ L3
 - device-independent random number generation
 
 Notes:
-# L5_modern cryptography
+# L5_cryptography
 - one-time pad: 1(flip) 0(remain)
 	- secure
 		- length(key) == length(message)
@@ -138,8 +136,72 @@ Notes:
 		- steps: preparation(A) &rArr; measurement(B) &rArr; shifting(public discussion) &rArr; detection
 		- shifting: AB with different measurement &rArr; collapse at B &rarr; dismiss this bit
 		- detection: AB same measurement, 50% Eve chooses the wrong measurement &rArr; qubit collapses to the other state &rArr; change the B's observation result &rarr; select random sample bits to test correctness
-# L6_Quantum_computer
+# L6_computer
+- quantum computing ==**(why speed up/ where does power come from? &rarr; superposition + inference)**==
+	> Deutsch's game
 
+	- simulation (nature itself)
+	> quantum in **superposition** to attempt computational problem **in parallel**
+	> &rArr; defeat RSA cryptosystem???
+	
+	- HHL (linear equation &rarr; quantum-enhanced ML/ AI) (exponential)
+	- Grover (search in unstructured database) (quadratic)
+	>initialization(magic shake many qubits in different superposition) 
+	>&rArr; parallel computing(superposition) 
+	>&rArr; **merging superposition(another magic shake)** **(inference: cancel/ amplified)**
+	>&rArr; measurement
+
+	- Shor's (factorization)(exponential) e.g. cybersecurity
+- limitation
+	- hard to build
+	- no Pf: exponential speed up
+	- at most exponential speed up (&lArr; energy consumption is exponential)
+	- general scientific problem
+- advantage
+	- ideal: no heat &rArr; less heat dissipation &rArr; higher speed& energy cost 
+	- now: energy-demanding, but one-off (when amount scales up)
+- challenge of implementation
+	- correction of error &rArr; add redundancy &rArr; more qubits
+	- isolation(sensitive to noise), control(interact with qubits), temperature, academic...
+- quantum supremacy
+	- simulating probability distribution
+	- sampling (Jiuzhang)
+- future
+
+# L7_sensor
+- precision limit (fundamental limit)
+	> precision(repeated/ close to each other) accuracy(close to true value
+	
+	- **Heisenberg's uncertainty** : ~~measure position and velocity simutaneouslu with high precision~~ (condition: Heisenberg's microscope)
+		- more precision &rArr; more energy, more uncertainty about velocity
+		- end of Moore's law, limit in measuring time/ rotation/ ...
+- **quantum sensor (single)**
+	>object(size), superposition, inference
+
+	- Rayleigh's criterion 
+		- classic: shorter wave length, larger lens
+		- quantum: closer!
+	- cold atom sensor
+		- GPS-free navigation (measuring acceleration & orientation of space, ultra-precise)
+		- Gravimeters (general relativity: gravity stronger &rArr; time slower)
+		- atomic clock: (latest: nuclear clock)
+			- constant vibration frequency of atoms
+			- cold atom &rArr; stable
+	- magnetic sensor: NV centers
+	- medical: detect COVID RNA, imaging of tumor cells
+- **quantum-enhanced scaling (entanglement)**
+	- classic scaling: **√N** &lArr; N together
+	- Quantum Scaling: **N**, Heisenberg scaling, (even with noise: e.g.**N^(3/4)**)
+		- GPS: global network of clock &rArr; precision in time &rArr; precision in space
+		- squeezed light (positive quantum sensing) 压缩光
+		- spin-squeezed atom (rubidium) 自旋压缩原子
+		- nuclear magnetic resonance 核磁共振
+- application
+	- **Quantum-Enhanced LIGO** (Gravitational wave detection)
+	- GPS
+	- radar
+	- microscope
+- commercialization
 
 # Midterm write-up
 ### logistics

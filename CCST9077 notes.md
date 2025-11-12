@@ -173,7 +173,7 @@ Notes:
 	> precision(repeated/ close to each other) accuracy(close to true value
 	
 	- **Heisenberg's uncertainty** : ~~measure position and velocity simutaneouslu with high precision~~ (condition: Heisenberg's microscope)
-		- more precision &rArr; more energy, more uncertainty about velocity
+		- more precision &rArr; more energy & more uncertainty about velocity
 		- end of Moore's law, limit in measuring time/ rotation/ ...
 - **quantum sensor (single)**
 	>object(size), superposition, inference

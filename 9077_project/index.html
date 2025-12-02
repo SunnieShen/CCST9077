@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CHSH Game 模拟器（互动版）</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial; margin: 16px; color:#111; }
+  h1 { margin: 0 0 8px 0; font-size: 22px; }
+  .grid { display: grid; grid-template-columns: 360px 1fr; gap:16px; align-items:start; }
+  .card { background: #fff; border: 1px solid #ddd; padding:12px; border-radius:8px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
+  label { display:block; margin:8px 0 4px; font-weight:600; font-size:13px; }
+  button { padding:8px 12px; font-size:14px; border-radius:6px; border:1px solid #2b7cff; background:#2b7cff; color:#fff; cursor:pointer; }
+  button.secondary { background:#f0f4ff; color:#2b7cff; border-color:#cfe0ff; }
+  .row { display:flex; gap:8px; align-items:center; margin-top:8px; }
+  .small { font-size:13px; color:#444; }
+  .muted { color:#666; font-size:13px; }
+  .stats { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+  .stat { padding:8px; border-radius:6px; background:#f7f9fc; border:1px solid #eef3ff; min-width:120px; text-align:center; }
+  table { border-collapse: collapse; width:100%; margin-top:8px; }
+  th, td { border:1px solid #eee; padding:6px 8px; text-align:center; }
+  .controls { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .tiny { font-size:12px; padding:6px 8px; }
+  .footer { margin-top:12px; color:#666; font-size:13px; }
+  .explain { font-size:14px; line-height:1.5; color:#222; }
+  input[type="number"] { width:100px; padding:6px; border-radius:6px; border:1px solid #ccc; }
+  select { padding:6px; border-radius:6px; border:1px solid #ccc; }
+  .pair-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:8px; }
+  .badge { display:inline-block; padding:6px 8px; background:#eef7ff; color:#036; border-radius:6px; font-weight:600; }
+  .code { background:#f6f6f6; padding:8px; border-radius:6px; font-family:monospace; font-size:13px; }
+</style>
+</head>
+<body>
+  <h1>CHSH Game 模拟器（单页）</h1>
+  <div class="muted">说明：CHSH 是一个检验局域实在论 (local realism) 与量子纠缠非经典相关性的经典小游戏。此模拟器允许你比较不同策略（经典、随机、自定义、量子）在 CHSH 游戏中的胜率，并展示 CHSH S 值与理论值。</div>
+
+  <div style="height:12px"></div>
+
+  <div class="grid">
+    <div class="card">
+      <label>选择策略</label>
+      <select id="strategy">
+        <option value="classical_best">经典最佳（恒定输出 0） — 理论胜率 75%</option>
+        <option value="random">随机策略（各自独立随机） — 理论胜率 50%</option>
+        <option value="quantum">量子最优（使用纠缠态与量子测量） — 理论胜率 ≈85.355%</option>
+        <option value="custom">自定义确定性策略（分别设定 a(0), a(1), b(0), b(1)）</option>
+      </select>
+
+      <div id="customPane" style="display:none; margin-top:8px;">
+        <div class="pair-grid">
+          <div>
+            <label>A 的策略（按 x）</label>
+            <div><label><input type="radio" name="a0" value="0" checked> a(0)=0</label></div>
+            <div><label><input type="radio" name="a0" value="1"> a(0)=1</label></div>
+            <div style="height:6px"></div>
+            <div><label><input type="radio" name="a1" value="0" checked> a(1)=0</label></div>
+            <div><label><input type="radio" name="a1" value="1"> a(1)=1</label></div>
+          </div>
+          <div>
+            <label>B 的策略（按 y）</label>
+            <div><label><input type="radio" name="b0" value="0" checked> b(0)=0</label></div>
+            <div><label><input type="radio" name="b0" value="1"> b(0)=1</label></div>
+            <div style="height:6px"></div>
+            <div><label><input type="radio" name="b1" value="0" checked> b(1)=0</label></div>
+            <div><label><input type="radio" name="b1" value="1"> b(1)=1</label></div>
+          </div>
+        </div>
+      </div>
+
+      <label>运行回合数（每次实验的随机样本数）</label>
+      <input id="trials" type="number" value="2000" min="1" max="2000000" />
+
+      <div class="row">
+        <button id="runBtn">运行模拟</button>
+        <button id="stepBtn" class="secondary tiny">单步（1 回合）</button>
+        <button id="resetBtn" class="secondary tiny">复位统计</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="small">总回合</div>
+          <div id="total" style="font-size:18px; font-weight:700">0</div>
+        </div>
+        <div class="stat">
+          <div class="small">胜利次数</div>
+          <div id="wins" style="font-size:18px; font-weight:700">0</div>
+        </div>
+        <div class="stat">
+          <div class="small">胜率</div>
+          <div id="winrate" style="font-size:18px; font-weight:700">—</div>
+        </div>
+      </div>
+
+      <label>按 (x,y) 分组的统计（x,y ∈ {0,1}）</label>
+      <table>
+        <thead>
+          <tr><th>(x,y)</th><th>次数</th><th>胜利数</th><th>胜率</th></tr>
+        </thead>
+        <tbody id="pairTable">
+          <tr><td>(0,0)</td><td id="n00">0</td><td id="w00">0</td><td id="p00">—</td></tr>
+          <tr><td>(0,1)</td><td id="n01">0</td><td id="w01">0</td><td id="p01">—</td></tr>
+          <tr><td>(1,0)</td><td id="n10">0</td><td id="w10">0</td><td id="p10">—</td></tr>
+          <tr><td>(1,1)</td><td id="n11">0</td><td id="w11">0</td><td id="p11">—</td></tr>
+        </tbody>
+      </table>
+
+      <div style="height:10px"></div>
+
+      <label>CHSH 相关量（实验/理论）</label>
+      <div class="small">E_xy = ⟨s_A * s_B⟩ （这里用 ±1 表示，bit → s: 0↦+1, 1↦-1）</div>
+      <div style="margin-top:8px;">
+        <div class="small">E00: <span id="E00">—</span></div>
+        <div class="small">E01: <span id="E01">—</span></div>
+        <div class="small">E10: <span id="E10">—</span></div>
+        <div class="small">E11: <span id="E11">—</span></div>
+        <div style="height:6px"></div>
+        <div class="small">S = E00 + E01 + E10 - E11 = <span id="Sval">—</span></div>
+        <div class="small">由 S 计算的胜率 p = 1/2 + S/8 = <span id="pFromS">—</span></div>
+      </div>
+
+      <div class="footer">
+        <div>注：量子理论最大期望胜率约 0.853553（cos^2(π/8) ≈ 0.853553）。经典局域策略最大 0.75。</div>
+        <div style="height:6px"></div>
+        <div class="muted">界面语言：中文。若需要英文版或将代码整合到你的项目中，我可以把文件打包。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="explain">
+        <h2>CHSH 游戏简介（简短）</h2>
+        每回合，裁判随机发给 Alice 一位 x∈{0,1}，给 Bob 一位 y∈{0,1}（均匀随机）。Alice 输出 a∈{0,1}，Bob 输出 b∈{0,1}（不能通信）。胜利条件：a ⊕ b = x · y。玩家可通过共享经典策略或预先共享的量子纠缠态来决定输出。局域实在论下的最佳平均胜率为 3/4；量子纠缠允许更高的胜率（约 0.8536），这就是 Bell 不等式违背的体现之一。
+        <h3>如何使用</h3>
+        1) 从左侧选择策略（经典/随机/量子/自定义）。<br>
+        2) 设定回合数，点“运行模拟”或“单步”一步一步运行。<br>
+        3) 观察总体胜率以及每组 (x,y) 的统计；查看 CHSH S 值和由它推导出的胜率。<br>
+        <h3>量子策略实现说明（技术）</h3>
+        我们用双粒子（singlet）概率模型直接采样联合概率：P(s_A, s_B) = 1/4 · (1 - s_A s_B cos(θ_A - θ_B))，其中 s∈{+1,-1}。将 ±1 映射到 bit: bit = (1 - s)/2。默认的“量子最优”测量角度为：
+        <div class="code">
+          θ_A(0)=0, θ_A(1)=π/2;<br>
+          θ_B(0)=π/4, θ_B(1)=-π/4
+        </div>
+        这些角度可达到 CHSH S = 2√2，从而胜率 ≈ 0.853553。
+        <h3>若要扩展</h3>
+        - 可以把“量子策略”替换为真实量子后端的采样（例如 Qiskit、IBM Q），或让用户自定义测量角度。<br>
+        - 可以记录样本数据导出 CSV，用于教学讲稿。<br>
+      </div>
+    </div>
+  </div>
+
+<script>
+/*
+CHSH Game Simulator
+- author: generated (assistant)
+- 说明见页面
+*/
+
+// Utility RNG
+function rand() { return Math.random(); }
+
+// Map between spin s ∈ {+1,-1} and bit a ∈ {0,1}: bit = (1 - s)/2 ; inverse s = 1 - 2*bit
+
+// Return joint distribution for singlet given angles thetaA, thetaB (radians)
+// joint[sA][sB] where sA, sB ∈ {1, -1}
+function singletJoint(thetaA, thetaB) {
+  const delta = thetaA - thetaB;
+  const c = Math.cos(delta);
+  const joint = {};
+  [1, -1].forEach(sA => {
+    joint[sA] = {};
+    [1, -1].forEach(sB => {
+      joint[sA][sB] = 0.25 * (1 - sA * sB * c);
+    });
+  });
+  return joint;
+}
+
+// Sample (sA, sB) from joint distribution object
+function sampleFromJoint(joint) {
+  // build array of entries with cumulative
+  const entries = [];
+  let cum = 0;
+  [1, -1].forEach(sA => {
+    [1, -1].forEach(sB => {
+      const p = joint[sA][sB] || 0;
+      cum += p;
+      entries.push({ sA, sB, cum, p });
+    });
+  });
+  const u = rand() * cum;
+  for (let e of entries) {
+    if (u <= e.cum) return { sA: e.sA, sB: e.sB };
+  }
+  // fallback
+  const last = entries[entries.length - 1];
+  return { sA: last.sA, sB: last.sB };
+}
+
+// Compute theoretical expected win probability for given measurement angle maps
+// anglesA: [thetaA0, thetaA1], anglesB: [thetaB0, thetaB1]
+function theoreticalWinProb(anglesA, anglesB) {
+  let pWin = 0;
+  for (let x = 0; x <= 1; x++) {
+    for (let y = 0; y <= 1; y++) {
+      const joint = singletJoint(anglesA[x], anglesB[y]);
+      // sum probabilities where bit a XOR b == x*y
+      let p = 0;
+      [1, -1].forEach(sA => {
+        [1, -1].forEach(sB => {
+          const a = (1 - sA) / 2;
+          const b = (1 - sB) / 2;
+          const win = ((a ^ b) === (x & y)) ? 1 : 0;
+          p += joint[sA][sB] * win;
+        });
+      });
+      pWin += 0.25 * p; // x,y uniform
+    }
+  }
+  return pWin;
+}
+
+// Compute theoretical E (correlator) and S
+function theoreticalS(anglesA, anglesB) {
+  const E = {};
+  for (let x=0;x<=1;x++){
+    for (let y=0;y<=1;y++){
+      const joint = singletJoint(anglesA[x], anglesB[y]);
+      // E = sum_{s,t} s*t*P(s,t)
+      let val = 0;
+      [1,-1].forEach(sA=>{
+        [1,-1].forEach(sB=>{
+          val += sA * sB * joint[sA][sB];
+        });
+      });
+      E[`${x}${y}`] = val;
+    }
+  }
+  const S = E['00'] + E['01'] + E['10'] - E['11'];
+  return { E, S };
+}
+
+// UI & Simulation
+const strategySel = document.getElementById('strategy');
+const customPane = document.getElementById('customPane');
+const runBtn = document.getElementById('runBtn');
+const stepBtn = document.getElementById('stepBtn');
+const resetBtn = document.getElementById('resetBtn');
+const trialsInput = document.getElementById('trials');
+
+const totalEl = document.getElementById('total');
+const winsEl = document.getElementById('wins');
+const winrateEl = document.getElementById('winrate');
+
+const n00 = document.getElementById('n00'), n01 = document.getElementById('n01'), n10 = document.getElementById('n10'), n11 = document.getElementById('n11');
+const w00 = document.getElementById('w00'), w01 = document.getElementById('w01'), w10 = document.getElementById('w10'), w11 = document.getElementById('w11');
+const p00 = document.getElementById('p00'), p01 = document.getElementById('p01'), p10 = document.getElementById('p10'), p11 = document.getElementById('p11');
+
+const E00 = document.getElementById('E00'), E01 = document.getElementById('E01'), E10 = document.getElementById('E10'), E11 = document.getElementById('E11');
+const Sval = document.getElementById('Sval'), pFromS = document.getElementById('pFromS');
+
+let stats = {
+  total:0, wins:0,
+  n00:0,n01:0,n10:0,n11:0,
+  w00:0,w01:0,w10:0,w11:0,
+  sumE00:0,sumE01:0,sumE10:0,sumE11:0 // sum of sA*sB for each pair, to compute E_xy
+};
+
+function resetStats(){
+  stats = {
+    total:0, wins:0,
+    n00:0,n01:0,n10:0,n11:0,
+    w00:0,w01:0,w10:0,w11:0,
+    sumE00:0,sumE01:0,sumE10:0,sumE11:0
+  };
+  refreshUI();
+}
+
+function refreshUI(){
+  totalEl.textContent = stats.total;
+  winsEl.textContent = stats.wins;
+  winrateEl.textContent = stats.total ? ( (stats.wins/stats.total*100).toFixed(3) + '%' ) : '—';
+
+  n00.textContent = stats.n00; n01.textContent = stats.n01; n10.textContent = stats.n10; n11.textContent = stats.n11;
+  w00.textContent = stats.w00; w01.textContent = stats.w01; w10.textContent = stats.w10; w11.textContent = stats.w11;
+  p00.textContent = stats.n00 ? ((stats.w00/stats.n00*100).toFixed(2)+'%') : '—';
+  p01.textContent = stats.n01 ? ((stats.w01/stats.n01*100).toFixed(2)+'%') : '—';
+  p10.textContent = stats.n10 ? ((stats.w10/stats.n10*100).toFixed(2)+'%') : '—';
+  p11.textContent = stats.n11 ? ((stats.w11/stats.n11*100).toFixed(2)+'%') : '—';
+
+  // compute E_xy experimentally
+  const E00val = stats.n00 ? stats.sumE00 / stats.n00 : null;
+  const E01val = stats.n01 ? stats.sumE01 / stats.n01 : null;
+  const E10val = stats.n10 ? stats.sumE10 / stats.n10 : null;
+  const E11val = stats.n11 ? stats.sumE11 / stats.n11 : null;
+
+  E00.textContent = (E00val===null)? '—' : E00val.toFixed(4);
+  E01.textContent = (E01val===null)? '—' : E01val.toFixed(4);
+  E10.textContent = (E10val===null)? '—' : E10val.toFixed(4);
+  E11.textContent = (E11val===null)? '—' : E11val.toFixed(4);
+
+  const Sexp = ( (E00val||0) + (E01val||0) + (E10val||0) - (E11val||0) );
+  Sval.textContent = stats.total ? Sexp.toFixed(4) : '—';
+  pFromS.textContent = stats.total ? ( (0.5 + Sexp/8).toFixed(6) ) : '—';
+}
+
+strategySel.addEventListener('change', () => {
+  customPane.style.display = strategySel.value === 'custom' ? 'block' : 'none';
+});
+
+// Get custom deterministic choices
+function getCustomDeterministic() {
+  const a0 = +document.querySelector('input[name="a0"]:checked').value;
+  const a1 = +document.querySelector('input[name="a1"]:checked').value;
+  const b0 = +document.querySelector('input[name="b0"]:checked').value;
+  const b1 = +document.querySelector('input[name="b1"]:checked').value;
+  return { a: [a0,a1], b: [b0,b1] };
+}
+
+// Single round simulation for current strategy
+function runRound(strategy) {
+  // draw inputs x,y uniform
+  const x = Math.random() < 0.5 ? 0 : 1;
+  const y = Math.random() < 0.5 ? 0 : 1;
+
+  let aBit, bBit, sA, sB;
+
+  if (strategy === 'classical_best') {
+    // optimal classical deterministic (always 0)
+    aBit = 0; bBit = 0;
+    sA = 1 - 2*aBit; sB = 1 - 2*bBit;
+  } else if (strategy === 'random') {
+    aBit = Math.random() < 0.5 ? 0 : 1;
+    bBit = Math.random() < 0.5 ? 0 : 1;
+    sA = 1 - 2*aBit; sB = 1 - 2*bBit;
+  } else if (strategy === 'custom') {
+    const det = getCustomDeterministic();
+    aBit = det.a[x];
+    bBit = det.b[y];
+    sA = 1 - 2*aBit; sB = 1 - 2*bBit;
+  } else if (strategy === 'quantum') {
+    // quantum sampling using singlet joint with preset optimal angles
+    const anglesA = [0, Math.PI/2];
+    const anglesB = [Math.PI/4, -Math.PI/4];
+    const joint = singletJoint(anglesA[x], anglesB[y]);
+    const sample = sampleFromJoint(joint);
+    sA = sample.sA; sB = sample.sB;
+    aBit = (1 - sA) / 2;
+    bBit = (1 - sB) / 2;
+  } else {
+    // default fallback
+    aBit = 0; bBit = 0;
+    sA = 1 - 2*aBit; sB = 1 - 2*bBit;
+  }
+
+  const win = ((aBit ^ bBit) === (x & y)) ? 1 : 0;
+
+  // update stats
+  stats.total += 1;
+  stats.wins += win;
+  if (x===0 && y===0) { stats.n00++; stats.w00 += win; stats.sumE00 += sA*sB; }
+  if (x===0 && y===1) { stats.n01++; stats.w01 += win; stats.sumE01 += sA*sB; }
+  if (x===1 && y===0) { stats.n10++; stats.w10 += win; stats.sumE10 += sA*sB; }
+  if (x===1 && y===1) { stats.n11++; stats.w11 += win; stats.sumE11 += sA*sB; }
+
+  return { x,y,aBit,bBit,win };
+}
+
+runBtn.addEventListener('click', async () => {
+  const trials = Math.max(1, Math.floor(+trialsInput.value || 1000));
+  const strat = strategySel.value;
+
+  // if quantum, compute theoretical expectation to show in console
+  if (strat === 'quantum') {
+    const anglesA = [0, Math.PI/2];
+    const anglesB = [Math.PI/4, -Math.PI/4];
+    const th = theoreticalWinProb(anglesA, anglesB);
+    alert('量子最优理论胜率 ≈ ' + (th*100).toFixed(4) + '% （理论）\n（示例: 若样本数有限，经验值会波动。）');
+  } else if (strat === 'classical_best') {
+    alert('“经典最佳” 指恒定输出 a=b=0，对所有输入均返回 0，理论胜率 75%。');
+  }
+
+  runBtn.disabled = true;
+  const batch = 1000;
+  let done = 0;
+  while (done < trials) {
+    const toRun = Math.min(batch, trials - done);
+    for (let i=0;i<toRun;i++) runRound(strat);
+    done += toRun;
+    refreshUI();
+    // yield to UI
+    await new Promise(resolve => setTimeout(resolve, 10));
+  }
+  runBtn.disabled = false;
+});
+
+stepBtn.addEventListener('click', () => {
+  runRound(strategySel.value);
+  refreshUI();
+});
+
+resetBtn.addEventListener('click', () => {
+  resetStats();
+});
+
+// compute theoretical values for default quantum angles and show on load
+(function init() {
+  resetStats();
+  const anglesA = [0, Math.PI/2];
+  const anglesB = [Math.PI/4, -Math.PI/4];
+  const th = theoreticalWinProb(anglesA, anglesB);
+  const ts = theoreticalS(anglesA, anglesB);
+  // show theoretical numbers in CHSH area for user reference (not replacing experimental)
+  // append a small note
+  const note = document.createElement('div');
+  note.style.marginTop = '8px';
+  note.className = 'muted';
+  note.innerHTML = `（参考）量子最优理论：p_win = ${th.toFixed(6)} ，S = ${ts.S.toFixed(6)} ，1/2 + S/8 = ${(0.5 + ts.S/8).toFixed(6)}`;
+  document.querySelectorAll('.card')[1].appendChild(note);
+})();
+</script>
+</body>
+</html>

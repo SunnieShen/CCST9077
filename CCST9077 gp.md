@@ -1,15 +1,11 @@
-plot:
-- [ ] 人物关系/游戏规则探索
-- [ ] transition1
-- [ ] 概念、原理解释
-- [ ] transition2
-- [ ] 正式游戏
-	- [ ] 一对纠缠的量子作为indicator
-	- [ ] 难度加大: without indicator, 选择最优策略
-- [ ] ending
 ToDo:
-- [ ] concept demo
-- [ ] 
+- [ ] concept demo (tyh)
+- [ ] CHSH game explanation
+	- [ ] script
+	- [ ] visual 
+- [ ] twine
+	- [ ] structure
+	- [ ] add picture & video
 
 ### Intro设定: 纠缠双生 
 - 单机游戏,一位玩家与游戏中的虚拟人物Alice是两个求职的喜剧演员，准备试镜一场特殊的“量子戏剧”
@@ -198,3 +194,5 @@ A final message appears, letter by letter:
 
 ---
 **✨ The curtain falls. But the entanglement, once formed, lingers.**
+
+

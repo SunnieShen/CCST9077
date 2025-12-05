@@ -1,3 +1,4 @@
+Direct to GitHub source file: https://github.com/SunnieShen/CCST9077/blob/a9ace857ed7f94dc2da3dade8cf7e0d26db2026b/README.md
 # **Entangled Siblings: A Quantum Theatre Audition**  
 *A Narrative Game about Quantum Mechanics & Human Connection*
 <div align="center">

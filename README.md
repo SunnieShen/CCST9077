@@ -11,8 +11,14 @@
 ## 🎭 Overview
 
 ***Entangled Siblings*** is a **single-player narrative game** built in **Twine** (or similar interactive fiction engine) where you and your virtual partner, Alice, **audition** for an avant-garde play about quantum-entangled twins. To win the roles, you must pass a mysterious “**synchronisation test**”—a direct analogy to the CHSH game from quantum information theory. Through dialogue, discovery, and strategy, you’ll learn core quantum concepts while exploring what it truly means to be “in sync” with another person.
+<div align="center">
+  <img src="https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/workflow.png" 
+       width="50%" 
+       alt="Quantum Theatre Audition"
+       style="max-width: 900px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <p><strong>Quantum Theatre Audition</strong></p>
+</div>
 
-(+故事框架图, 等tyh补全twine)
 ## 🔍 **Highlights**
 
 ###  **1. Strong Connection to Course Ideas**

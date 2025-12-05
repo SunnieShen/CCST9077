@@ -1,6 +1,13 @@
 # **Entangled Siblings: A Quantum Theatre Audition**  
 *A Narrative Game about Quantum Mechanics & Human Connection*
-![Quantum Theatre Audition](https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/first_page0.png)
+<div align="center">
+  <img src="https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/first_page0.png" 
+       width="30%" 
+       alt="Quantum Theatre Audition"
+       style="max-width: 900px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <p><strong>Quantum Theatre Audition</strong></p>
+</div>
+
 ## 🎭 Overview
 
 ***Entangled Siblings*** is a **single-player narrative game** built in **Twine** (or similar interactive fiction engine) where you and your virtual partner, Alice, **audition** for an avant-garde play about quantum-entangled twins. To win the roles, you must pass a mysterious “**synchronisation test**”—a direct analogy to the CHSH game from quantum information theory. Through dialogue, discovery, and strategy, you’ll learn core quantum concepts while exploring what it truly means to be “in sync” with another person.
@@ -40,7 +47,11 @@ The game integrates key quantum information concepts in an accessible, narrative
 - **Twine game file** (.html)   
 - README 
 - CHSH simulation program (.html)
-- videos, graphs and drawings
+- videos
+	- Quantum concepts(superposition, entanglement, steering)
+ 	- CHSH with simulation quantum measurement device
+    
+- graphs and drawings
 ##  AI Usage Statement
 AI tools were used for language polishing and structuring parts of this project description. All game concepts, narrative design, pedagogical framing, and quantum mappings are original work!
 

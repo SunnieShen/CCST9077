@@ -16,7 +16,7 @@
        width="70%" 
        alt="Game structure"
        style="max-width: 900px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-  <p><strong>Quantum Theatre Audition</strong></p>
+  <p><strong>Game structure</strong></p>
 </div>
 
 ## 🔍 **Highlights**

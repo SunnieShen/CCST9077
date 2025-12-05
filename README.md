@@ -2,7 +2,7 @@
 *A Narrative Game about Quantum Mechanics & Human Connection*
 <div align="center">
   <img src="https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/first_page0.png" 
-       width="30%" 
+       width="50%" 
        alt="Quantum Theatre Audition"
        style="max-width: 900px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <p><strong>Quantum Theatre Audition</strong></p>

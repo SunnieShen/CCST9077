@@ -13,7 +13,8 @@
 The game integrates key quantum information concepts in an accessible, narrative-driven format:
 - **Quantum Entanglement**: metaphor for the "unspoken默契" between the actors.
 - **The CHSH Game & Bell’s Inequality** are directly mapped onto the synchronisation test rules and win conditions.
-	- ![Comparing elements between CHSH and Audition testing](https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/first_page0.png)
+	
+
 - **Superposition & Measurement** are represented through "emotional prompts" (measurement bases) and "performance style" choices (measurement outcomes).
 - **Quantum Steering** is reflected in the collaborative, responsive decision-making between the player and Alice.
 ###  **2. Originality & Creativity**

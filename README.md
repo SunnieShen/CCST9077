@@ -44,13 +44,17 @@ The game integrates key quantum information concepts in an accessible, narrative
 - All quantum explanations (superposition, entanglement, steering) are based on lecture materials.  
 - CHSH win rates (classical ≤75%, quantum ~85%) are correctly represented.  
 ## Project Deliverables
-- **Twine game file** (.html)   
+- Twine game file (.html)
+  <html>
 - README 
 - CHSH simulation program (.html)
+  source code: https://github.com/SunnieShen/CCST9077/blob/2bd240db29dcffaac65c5f47fe77489ffb800f93/Entangled_twins_project/CHSH_simulator.html
 - videos
 	- Quantum concepts(superposition, entanglement, steering)
+  	<mp4>
  	- CHSH with simulation quantum measurement device
-    
+	<mp4>
+
 - graphs and drawings
 ##  AI Usage Statement
 AI tools were used for language polishing and structuring parts of this project description. All game concepts, narrative design, pedagogical framing, and quantum mappings are original work!
@@ -68,3 +72,8 @@ AI tools were used for language polishing and structuring parts of this project 
 | **Luo Jian**      | **Technical Implementation Lead**  <br>• Programmed the core CHSH game simulation logic  <br>• Implemented detailed logistics for Twine  <br>• Integrated all visual and interactive elements into the final Twine build.                                                                                        |
 | **Tong Yuhua**    | **Quantum basics & Media**  <br>• Researched and authored accurate explanations for superposition, entanglement, and quantum steering.  <br>• Wrote the in-game script for dialogue and the archival video narration.  <br>• Edited  educational quiz quiz.                                                      |
 | **Teng Rui**      | **CHSH concept & Narrative Integration**  <br>• Focused on the CHSH game; mapped its rules precisely to the audition's synchronization test.  <br>• Co-wrote the script, ensuring dialog naturally introduced quantum strategy choices.  <br>• Fact-checked all quantum-related content for scientific accuracy. |
+
+
+## Turitin Similarity check
+(paste raw script for turitin)
+(replaced by similarity report for finnal submission)

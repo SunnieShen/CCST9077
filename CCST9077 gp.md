@@ -1,11 +1,11 @@
 ToDo:
-- [ ] concept demo (tyh)
-- [ ] CHSH game explanation
-	- [ ] script
-	- [ ] visual 
-- [ ] twine
-	- [ ] structure
-	- [ ] add picture & video
+- [x] concept demo (tyh)
+- [x] CHSH game explanation
+	- [x] script
+	- [x] visual 
+- [x] twine
+	- [x] structure
+	- [x] add picture & video
 	      - "Quantum"
 
 # Intro设定: 纠缠双生 
@@ -29,11 +29,6 @@ chat with your partner Alice: 但你们本不是双胞胎, 如何通过这场同
 ```
 
 ### trial round
->至少六次, 保证1+1+2+2, 类比HKU 24-25前入学本科生 修CC课学分的方法
-指令[0,0] &rarr; [1,0]/[0,1]
-[0,1] &rarr; [1,1]/[0,0]
-[1,0] &rarr; [1,1]/[0,0]
-[1,1] &rarr; [1,1]/[0,0]
 
 #### **第一轮：双日常（相同反应）**
 
@@ -261,125 +256,14 @@ Alice: 那么我们应该用什么策略
 - 在整个面试过程中我们表现的十分默契, 共同发现了quantumn的秘密,我们之间难道不也是一种纠缠么, 多么默契啊
 收到面试成功的通知:
 - 游戏原理解释
-	- ()
 	- → **剧本要求**：即使身处不同“世界”，他们的表演风格必须相同。  
 	- → **考察什么**：
 	    1. **同理心与情境感知**：身处日常场景的一方，必须“感知”到搭档正在经历冲突，并调整自己的表演强度与之匹配。
 	    2. **集体优先于个体**：优秀的双胞胎角色表演者，懂得“集体表演的一致性”比“个人情境的真实性”更重要。他们是一个艺术整体。
 	    3. **导演的控制力**：这测试演员是否能严格遵循导演（剧本）设定的抽象规则，而非完全依赖个人直觉。
 - 导演表示早就发现你们并不是双生, 但你们共同探寻量子物理世界的过程早已展示出超乎承认的默契与专业水品, 和对量子物理世界的好奇心与探索欲, 戏剧也是一样, 有了这份好奇心与热爱才能在这个领域行稳致远,真挚的祝贺你们!
-**Title: Entangled Siblings - A Quantum Theater Audition**
 
-# **Introduction: The Entangled Siblings**
 
-You are a comedic actor, standing in the dimly lit backstage of the Neo-Futurist Theater. Beside you is Alice, a sharp and spirited performer you met only a week ago. Together, you’re here to audition for *Entangled Siblings*, an avant-garde play about twin siblings connected by quantum entanglement. The director insists that only *real twins* can portray the profound, wordless(默契 mòqì, tacit understanding) the script demands.
-
-But you and Alice are not siblings. The air is thick with the scent of old wood and anticipation. You exchange a glance—not of deception, but of determination. You believe true默契 is not inherited; it is built through understanding, collaboration, and shared curiosity.
-
----
-
-### **Before the Audition**
-
-*(Whispered conversation in the shadowy corridor behind the stage.)*
-
-**Alice:** (Nervously adjusting her sleeve) “The director only wants real twins. How do we even…?”  
-**You:** (Voice steady, reassuring) “I heard this ‘synchronization test’ isn’t about blood. It’s about strategy. If we understand the rules, we can create默契—prove that connection isn’t born, it’s made.”  
-**Alice:** (A small smile forms) “Right. We’re not here to trick anyone. We’re here to show that默契 can be learned.”
-
----
-
-### **At the Scene**
-
-The director, a poised woman with keen eyes, enters the rehearsal hall. On the wall glows an antique-looking device—the “Synchronization Tester,” its surface flickering with soft, colored lights.
-
-**Director:** “Welcome. To play the entangled siblings, you must demonstrate a synchrony that transcends the classical.”  
-She gestures toward the device. “It will send each of you an ‘emotional prompt’—a colored light. You must respond instantly with a ‘reaction’—a button press.”  
-**Director:** “Let’s begin with practice rounds. No penalties. Just learn the rhythm.”
-
-> **Practice Rounds – Rules Explained (Mechanics only, no theory yet):**
-> - Emotional Prompt (Light Color):
->   - **Red Light (Prompt A):** Recall a happy memory.
->   - **Blue Light (Prompt B):** Recall a sad memory.
-> - Reaction (Button Press):
->   - **Button A:** Smile
->   - **Button B:** Frown
-> - Synchronization Rule:
->   1. If **both receive Red** → Reactions must be *different* (one smiles, one frowns).
->   2. **All other combinations** → Reactions must be *same*.
-
-You complete three practice rounds. The system chimes softly:  
-*“Synchronization Score: ~75%.”*
-
----
-
-### **Trial Round**
-
-A more structured test begins. The device cycles through at least six prompt pairs, ensuring every combination appears:
-
-| You  | Alice | Correct Response Pattern     |
-|------|-------|------------------------------|
-| Red  | Red   | Different (A/B or B/A)      |
-| Red  | Blue  | Same (A/A or B/B)           |
-| Blue | Red   | Same (A/A or B/B)           |
-| Blue | Blue  | Same (A/A or B/B)           |
-
-You and Alice fall into a rhythm, but the score stubbornly hovers around 75%.
-
----
-
-### **The Interlude**
-
-Suddenly, the director’s phone rings. She excuses herself, leaving you two alone in the theater. The silence feels heavy, filled only with the hum of old stage lights.
-
-While pacing near a dusty prop shelf, Alice’s elbow knocks against a small, metal box—a vintage video recorder labeled *“Quantum Theatre Archives, 1972.”* A curious sticker on its side shows two linked particles shimmering.
-
-**Alice:** “Look at this… It’s like it’s calling to us.”  
-**You:** “Let’s see what’s inside.”
-
-You press play. The screen flickers to life with grainy animation and a calm, scholarly voiceover:
-
-*“In quantum mechanics, two particles can become ‘entangled’—their states linked, no matter the distance. This connection defies classical intuition. It is instantaneous, mysterious, and real.”*  
-*“In 1964, physicist John Bell proposed an inequality—a limit to how strongly classical systems can correlate. But quantum entanglement… breaks that limit.”*  
-*“Imagine a game: two players, prompts given, responses measured. Classically, they can win at most 75% of the time. But if they share entanglement, their win rate can exceed 85%...”*
-
-The video ends. You both sit in stunned silence.
-
-**Alice:** (Eyes wide) “That’s… exactly our test.”  
-**You:** (Mind racing) “Right. So if we always smile or always frown, we’ll fail the Red-Red case every time.”  
-**Alice:** “What’s the best strategy, then? Always [smile, smile]? Always [frown, frown]? Or something… dynamic?”
-
-Footsteps echo in the hallway—the director is returning. You quickly place the recorder back on the shelf, a new understanding glowing between you.
-
----
-
-### **The Real Audition**
-
-The director resumes her position. “Now begins the formal audition. Choose your strategy consciously. The system will evaluate your true synchrony.”
-
-You are presented with a silent choice:
-- **Classical Strategy** (pre-agreed fixed responses): ~75% expected win rate.
-- **Quantum-Inspired Strategy** (dynamic responses based on prompt type): ~85% expected win rate.
-- **Random Guessing**: ~50% win rate.
-
-You and Alice lock eyes and nod—you choose the **quantum-inspired approach**, subtly shifting your response tendencies as the prompts flow. The screen displays a real-time graph; your synchronization rate climbs, dips, and then steadily rises toward 85%.
-
----
-
-### **The Ending**
-
-The test concludes. Backstage, you and Alice wait in a comfortable quiet, the thrill of discovery still buzzing in the air.
-
-**Alice:** (Softly) “That idea of entanglement… it’s beautiful. The way particles stay connected across space. Do you think… what we just did, thinking together, figuring it out together… is that a kind of entanglement too?”  
-**You:** (Smiling) “I think it is. Entanglement isn’t just physics. It’s what happens when two minds resonate—understanding without words.”
-
-The door opens. The director walks in, her stern expression now softened into a warm, knowing smile.
-
-**Director:** “Congratulations. I knew you weren’t twins from the start.”  
-She pauses, letting the words settle. “But what you showed me today wasn’t血缘默契 (xuèyuán mòqì, blood-born默契). It was **理解默契 (lǐjiě mòqì, understanding-born默契)**.”  
-**Director:** “You explored, you learned, you adapted together. That curiosity, that shared pursuit of truth—that is the real ‘quantum spark’ this play needs.”  
-**Director:** “Welcome to *Entangled Siblings*. You have proven that the deepest connections are not written in genes, but woven through shared curiosity and courage.”
-
----
 
 ### **Epilogue**
 

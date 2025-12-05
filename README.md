@@ -86,7 +86,5 @@ AI tools were used for language polishing and structuring parts of this project 
 | **Tong Yuhua**    | **Quantum basics & Media**  <br>• Researched and authored accurate explanations for superposition, entanglement, and quantum steering.  <br>• Wrote the in-game script for dialogue and the archival video narration.  <br>• Edited  educational quiz quiz.                                                      |
 | **Teng Rui**      | **Narrative Integration**  <br>• Co-wrote the script, introducing CHSH game |
 
-
 ## Turitin Similarity check
-(paste raw script for turitin)
-(replaced by similarity report for finnal submission)
+The Turitin similarity check covered all the raw scripts in the project.

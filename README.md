@@ -45,7 +45,16 @@ The game integrates key quantum information concepts in an accessible, narrative
 - CHSH win rates (classical ≤75%, quantum ~85%) are correctly represented.  
 ## Project Deliverables
 - Twine game file (.html)
-  **html**
+	<div style="text-align:center; margin:20px 0;">
+	  <a href="https://github.com/SunnieShen/CCST9077/blob/0e507adc207b8b97b2550c217bd031598d62de5d/Entangled_twins_project/Storyline.html" 
+	     target="_blank" 
+	     style="display:inline-block; padding:12px 30px; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; text-decoration:none; border-radius:8px; font-weight:bold; font-size:18px; box-shadow:0 4px 15px rgba(0,0,0,0.2); transition:all 0.3s ease;">
+	    🚀 Game source file. Download and play!
+	  </a>
+	  <p style="color:#666; font-size:14px; margin-top:8px;">
+	  </p>
+	</div>
+
 - README 
 - CHSH simulation program (.html)
   source code: https://github.com/SunnieShen/CCST9077/blob/2bd240db29dcffaac65c5f47fe77489ffb800f93/Entangled_twins_project/CHSH_simulator.html

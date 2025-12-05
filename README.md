@@ -14,7 +14,7 @@
 <div align="center">
   <img src="https://github.com/SunnieShen/CCST9077/blob/19ee66c22e6ef48a4ce7291c1e8de32860aa106b/Entangled_twins_project/workflow.png" 
        width="70%" 
-       alt="Quantum Theatre Audition"
+       alt="Game structure"
        style="max-width: 900px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <p><strong>Quantum Theatre Audition</strong></p>
 </div>

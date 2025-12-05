@@ -1,7 +1,6 @@
 # **Entangled Siblings: A Quantum Theatre Audition**  
 *A Narrative Game about Quantum Mechanics & Human Connection*
 ![Quantum Theatre Audition](https://github.com/SunnieShen/CCST9077/blob/b1de59aabe29808e00ec429d65de1717a83ae434/Entangled_twins_project/first_page0.png)
-
 ## 🎭 Overview
 
 ***Entangled Siblings*** is a **single-player narrative game** built in **Twine** (or similar interactive fiction engine) where you and your virtual partner, Alice, **audition** for an avant-garde play about quantum-entangled twins. To win the roles, you must pass a mysterious “**synchronisation test**”—a direct analogy to the CHSH game from quantum information theory. Through dialogue, discovery, and strategy, you’ll learn core quantum concepts while exploring what it truly means to be “in sync” with another person.
@@ -12,8 +11,15 @@
 ###  **1. Strong Connection to Course Ideas**
 The game integrates key quantum information concepts in an accessible, narrative-driven format:
 - **Quantum Entanglement**: metaphor for the "unspoken默契" between the actors.
-- **The CHSH Game & Bell’s Inequality** are directly mapped onto the synchronisation test rules and win conditions.
+- **The CHSH Game & Bell’s Inequality** are directly mapped onto the synchronisation test rules and win conditions
 	
+	| Audition Frame               | CHSH Game Frame                |
+	| ---------------------------- | ------------------------------ |
+	| Everyday / Conflict prompt   | Measurement setting (0 or 1)   |
+	| Restrained / Expansive style | Measurement outcome (+1 or -1) |
+	| “Synchronization”            | Correlation value              |
+	| “Classical limit: 75%”       | Bell inequality bound          |
+	| “Quantum potential: ~85%”    | Tsirelson bound                |
 
 - **Superposition & Measurement** are represented through "emotional prompts" (measurement bases) and "performance style" choices (measurement outcomes).
 - **Quantum Steering** is reflected in the collaborative, responsive decision-making between the player and Alice.

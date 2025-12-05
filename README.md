@@ -45,16 +45,13 @@ The game integrates key quantum information concepts in an accessible, narrative
 - CHSH win rates (classical ≤75%, quantum ~85%) are correctly represented.  
 ## Project Deliverables
 - Twine game file (.html)
-  <html>
+  **html**
 - README 
 - CHSH simulation program (.html)
   source code: https://github.com/SunnieShen/CCST9077/blob/2bd240db29dcffaac65c5f47fe77489ffb800f93/Entangled_twins_project/CHSH_simulator.html
 - videos
-	- Quantum concepts(superposition, entanglement, steering)
-  	<mp4>
- 	- CHSH with simulation quantum measurement device
-	<mp4>
-
+	- 25-26 sem2 CCST9077 Tutorial: Quantum concepts(superposition, entanglement, steering) [![watch the video](https://img.shields.io/badge/▶-CCST9077_Tutorial:_Quantum_concepts-blue)](https://github.com/SunnieShen/CCST9077/raw/40359044f7f26457fd2d761c9c3fb780a24b97fb/Entangled_twins_project/9077_tutorial.mp4)
+ 	- CHSH with simulation quantum measurement device [![watch the video](https://img.shields.io/badge/▶-watch_CHSH_simulator_demo-blue)](https://github.com/SunnieShen/CCST9077/raw/40359044f7f26457fd2d761c9c3fb780a24b97fb/Entangled_twins_project/simulator.mp4) &larr; click to watch
 - graphs and drawings
 ##  AI Usage Statement
 AI tools were used for language polishing and structuring parts of this project description. All game concepts, narrative design, pedagogical framing, and quantum mappings are original work!

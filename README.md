@@ -83,7 +83,7 @@ AI tools were used for language polishing and structuring parts of this project 
 | **Shen Hongshan** | **Narrative Lead & Project Coordinator**  <br>• Designed "theater audition" plot  <br>• Concept mapping between quantum(CHSH) and game mechanics.  <br>• Twine project structure, original drawings, workflow control.                                                                                           |
 | **Luo Jian**      | **Technical Implementation Lead**  <br>• Programmed the core CHSH game simulation logic  <br>• Implemented detailed logistics for Twine  <br>• Integrated all visual and interactive elements into the final Twine build.                                                                                        |
 | **Tong Yuhua**    | **Quantum basics & Media**  <br>• Researched and authored accurate explanations for superposition, entanglement, and quantum steering.  <br>• Wrote the in-game script for dialogue and the archival video narration.  <br>• Edited  educational quiz quiz.                                                      |
-| **Teng Rui**      | **CHSH concept & Narrative Integration**  <br>• Focused on the CHSH game; mapped its rules precisely to the audition's synchronization test.  <br>• Co-wrote the script, ensuring dialog naturally introduced quantum strategy choices.  <br>• Fact-checked all quantum-related content for scientific accuracy. |
+| **Teng Rui**      | **Narrative Integration**  <br>• Co-wrote the script, introducing CHSH game |
 
 
 ## Turitin Similarity check
